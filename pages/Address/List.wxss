@@ -1,0 +1,63 @@
+/* pages/address/address.wxss */
+.chebox{
+    width: 50rpx;
+    height: 40rpx;
+    float: left;
+    vertical-align: middle;
+    padding: 0 10rpx;
+    margin-top: 20rpx;
+}
+.chebox.right{
+    float: right;
+    height: 50rpx;
+    margin-top:15rpx;
+
+}
+.width40{
+    width: 40rpx;
+    height: 40rpx
+}
+.width50{
+    width: 50rpx;
+    height: 50rpx
+}
+.addr-box{
+    width: 100%;
+    background: #ffffff;
+    padding: 20rpx 0;
+    overflow: hidden;
+    border-bottom: 6rpx solid #f8f8f8;
+    margin-right:0;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transform: translateX(90px);
+    transform: translateX(90px);
+    margin-left: -90px;
+    font-size: 28rpx;
+}
+.addr-info{
+     width: 580rpx;
+     float: left;
+     padding:0 10rpx;
+}
+.addr-info span{
+     display: block;
+}
+
+.c-order-price-box{
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-top: 1rpx solid #d9d9d9;
+  z-index: 100;
+  width:100%;
+}
+.c-order-price-box text{
+  text-align: center;
+  font-size: 28rpx;
+  display: block;
+  padding: 15px;
+  background: #F16261;
+  color: #ffffff
+}

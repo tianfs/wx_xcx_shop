@@ -1,0 +1,31 @@
+<view class="container">
+    <view class="section">
+         <text>姓　　名：</text> 
+         <input placeholder="请输入姓名" auto-focus bindinput="input_name" value="{{name}}"/>
+    </view>
+    <view class="section">
+         <text>手机号码：</text> 
+         <input placeholder="请输入手机号码" bindinput="input_tel" value="{{tel}}"/>
+    </view>
+    <view class="section">
+        <text>地　　区：</text> 
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+            {{region[0]}}，{{region[1]}}，{{region[2]}}
+        </picker>
+    </view>
+    <view class="section">
+         <text>详细地址：</text>
+         <input placeholder="请输入详细地址" bindinput="input_address" value="{{address}}"/>
+    </view>
+    <view class="footer-btn-box" wx:if="{{addrId}}">
+        <button type='warn' bindtap="saveAddr" class="footer-btn">保 存</button>
+        <button type='warn' bindtap="delAddr" class="footer-btn">删 除</button>
+    </view>
+     <view class="footer-btn-box" wx:else>
+         <button type='warn' bindtap="saveAddr" class="footer-btn">保 存</button>
+         <button type='warn' bindtap="openWxAddr" class="footer-btn">微信获取</button>
+    </view>
+</view>
+
+
+

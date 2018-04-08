@@ -1,0 +1,88 @@
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper'>
+  <block wx:for="{{goods.image}}">
+    <swiper-item>
+      <navigator url="" hover-class="navigator-hover">
+        <image src="{{item}}" class="slide-image" mode='widthFix' />
+      </navigator>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='goods-box-a'>
+  <text class='goods-a-title'>{{goods.goods_name}}</text>
+  <view class='goods-a-text'>
+    <text class='goods-text1'>￥{{goods.goods_price/100}}</text>
+    <text class='goods-text2'>
+      原价：<text class='goods-text1-b'>￥{{goods.mark_price/100}}</text>
+    </text>
+  </view>
+</view>
+<view class='goods-box-b'>
+  <text>商品详情</text>
+</view>
+<view class='goods-box-c'>
+    <block wx:for="{{goods.param}}">
+      <text>{{item.param_name}}：{{item.param_value}}</text>
+    </block>
+    <block wx:for="{{goods.content}}">
+        <image class='goods-box-c-img' src='{{item}}' mode='widthFix'></image>
+    </block>
+</view>
+<view class='goods-fixed-box'>
+  <view class='goods-fixed-cont goods-menu'>
+    <view class='goods-wp' >
+      <button open-type='contact' class='contact-style' wx:if="{{is_customer==1}}">
+        <image src='/images/goods_icon1.png' mode='widthFix'></image>
+        <view class='goods-text-v'>客服</view>
+      </button>
+    </view>
+    <view class='goods-wp'>
+         <button open-type='share' class='contact-style'>
+                <image src='/images/goods_icon2.png' mode='widthFix'></image>
+         <view class='goods-text-v'>分享</view>
+        </button>
+    </view>
+    <view class='goods-wp' bindtap="shopping">
+      <view class='goods-num' wx:if="{{cart_count > 0}}">{{cart_count}}</view>
+      <image src='/images/goods_icon3.png' mode='widthFix'></image>
+      <view class='goods-text-v'>购物车</view>
+    </view>
+  </view>
+  <view class='goods-fixed-cont goods-car' bindtap='clickTcShow'>加入购物车</view>
+</view>
+<view style="display:{{is_hide}}">
+  <view class='goods-tc-bg' bindtap='tcHide'></view>
+  <view class='goods-car-tc'>
+    <view class='goods-tc-img'>
+      <image src='{{selectedInfo.goods_img}}'></image>
+      <view class='goods-tc-text'>
+        <text class='goods-f-text'>￥{{selectedInfo.goods_price/100}}</text>
+        <text>库存{{selectedInfo.goods_stock}}件</text>
+        <text>{{selectedInfo.goods_attr}}</text>
+      </view>
+    </view>
+    <view class='goods-tc-box-b'>
+        <block  wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex">
+      <view class='goose-tc-box-c'>
+        <text class='goods-tc-jhl'>{{attrValueObj.attrkey}}</text>
+        <view class='goods-tc-view'>
+            <text class="attr_value {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'goods-active':'goods-ys'):'goods-ys'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"  
+      data-value="{{value}}" data-key="{{attrValueObj.attrkey}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}</text>
+  
+        </view>
+      </view>
+      </block>
+    </view>
+    <view class='goods-ad-wrp'>
+      <view class='goods-step-box'>
+        <view class="stepper">
+          <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+          <input type="number" bindchange="bindManual" value="{{num}}" />
+          <text class="normal" bindtap="bindPlus">+</text>
+        </view>
+      </view>
+      <view class='goods-tc-car' bindtap="submit">
+        <text bindtap='addToCart'>加入购物车</text>
+      </view>
+    </view>
+  </view>
+</view>

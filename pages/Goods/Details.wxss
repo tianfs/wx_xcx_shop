@@ -1,0 +1,268 @@
+/* pages/goodsShow/goodsShow.wxss */
+.swiper{
+  height: 620rpx;
+}
+.slide-image{  
+    width: 750rpx;
+}
+.goods-box-a{
+  background: #ffffff;
+  padding:10rpx;
+  border-bottom: 1px solid #f0efed;
+}
+.goods-a-title{
+  font-size: 28rpx;
+  color: #6f6c68;
+}
+.goods-a-text{
+  padding: 10rpx 0;
+}
+.goods-a-text text{
+  font-size: 26rpx;
+}
+.goods-text1{
+  color:#F16261;
+  margin-right: 65rpx;
+  display: inline-block;
+}
+.goods-text2{
+  color: #c7c3c7;
+  display: inline-block;
+}
+.goods-text1-b{
+  text-decoration: line-through;
+}
+.goose-tc-box-c{
+  display: block;
+}
+.goods-box-b{
+  border-top: 1px solid #f0efed;
+  margin-top: 20rpx;
+  padding: 20rpx 10rpx;
+  background: #ffffff;
+  text-align: center;
+  border-bottom: 1px solid #F16261;
+}
+.goods-box-b text{
+  font-size: 28rpx;
+  color: #F16261;
+}
+.goods-box-c{
+  background: #ffffff;
+  padding-bottom: 120rpx;
+}
+.goods-box-c text{
+  border-bottom: 1px solid #f0efed;
+  display: block;
+  font-size: 26rpx;
+  color: #6f6c68;
+  padding:13rpx 10rpx;
+  line-height: 40rpx;
+}
+.goods-box-c-img{
+  width: 730rpx;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+.goods-fixed-box{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row;
+  width: 750rpx;
+  box-sizing: border-box;
+}
+.goods-fixed-cont{
+  width: 376rpx;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+}
+.goods-menu{
+  background: #ffffff;
+  font-size: 30rpx;
+  border-top: 1px solid #ececec;
+}
+.goods-menu view{
+  display: inline-block;
+  width: 125rpx;
+  box-sizing: border-box;
+}
+.goods-car{
+  background:#F16261;
+  font-size: 30rpx;
+  color: #ffffff;
+  padding: 10rpx 10rpx;
+  line-height: 80rpx;
+}
+.goods-wp{
+  line-height: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  border-right: 1px solid #ececec;
+  box-sizing: border-box;
+  position: relative;
+}
+.goods-menu .goods-num{
+  position: absolute;
+  top: 5rpx;
+  right: 27rpx;
+  background: #F16261;
+  color: #ffffff;
+  font-size: 22rpx;
+  width: auto;
+  min-width: 30rpx;
+  height: 30rpx;
+  display: inline-block;
+  line-height: 30rpx;
+  border-radius: 20rpx;
+}
+.goods-wp image{
+  width: 40rpx;
+}
+.goods-text-v{
+  font-size: 24rpx;
+  line-height: 30rpx;
+  margin-top: 10rpx;
+}
+.goods-tc-bg{
+  background: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.goods-car-tc{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 750rpx;
+  background: #ffffff;
+}
+.goods-tc-img{
+  padding: 15rpx 20rpx;
+  height:60px;
+}
+.goods-tc-img image{
+  width: 80px;
+  height: 80px;
+  box-shadow: 0 0 5px #6f6c68;
+  margin-top: -60rpx;
+  float: left;
+}
+.goods-tc-text{
+  overflow: hidden;
+  padding-left: 15rpx;
+}
+.goods-tc-text text{
+  display: block;
+  font-size: 26rpx;
+  line-height: 32rpx;
+}
+.goods-f-text{
+  color:#F16261;
+  font-weight: bold;
+}
+.goods-tc-box-b{
+  border-top: 1px solid #efeeec;
+  border-bottom: 1px solid #efeeec;
+  padding: 15rpx;
+  margin-top: 15rpx;
+}
+.goods-tc-jhl{
+  font-size: 28rpx;
+}
+.goods-tc-view{
+  margin-top: 10rpx;
+}
+.goods-ys{
+  font-size: 24rpx;
+  padding: 10rpx;
+  border: 1px solid #6f6c68;
+  border-radius: 10rpx;
+  margin-right: 15rpx;
+  margin-bottom: 15rpx;
+  display: inline-block;
+}
+.goods-active{
+  font-size: 24rpx;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  margin-right: 15rpx;
+  margin-bottom: 15rpx;
+  display: inline-block;
+  color:#F16261;
+  border: 1px solid #F16261;
+}
+.goods-ad-wrp{
+  width: 750rpx;
+}
+.goods-step-box{
+  width: 375rpx;
+  display: inline-block;
+  text-align: center;
+  float: left;
+}
+.stepper {  
+  width: 200rpx;  
+  border: 1px solid #ccc;  
+  border-radius: 6rpx;  
+  margin-right: 20rpx;
+  margin: 15rpx auto 0;
+  overflow: hidden;
+}
+.stepper text {  
+  width: 58rpx;  
+  text-align: center;  
+  float: left;  
+  font-size: 40rpx;
+  padding: 6rpx 0;
+  color: #949494;
+  line-height: 52rpx;
+}
+.stepper input {  
+  width: 80rpx;  
+  float: left;  
+  margin: 0 auto;  
+  text-align: center;  
+  font-size: 30rpx;  
+  border-left: 1px solid #ccc;  
+  border-right: 1px solid #ccc;  
+  padding: 6rpx 0; 
+  color: #949494;
+}
+.stepper .normal{  
+  color: #949494;
+}
+.stepper .disabled{  
+  color: #ccc;  
+}
+.goods-tc-car{
+  display: inline-block;
+  width: 376rpx;
+  text-align: center;
+  float: left;
+}
+.goods-tc-car text{
+  font-size: 30rpx;
+  display: block;
+  padding: 10rpx;
+  line-height: 80rpx;
+  background: #F16261;
+  color: #ffffff;
+}
+.contact-style{
+  margin: 0;
+  padding: 0;
+  font-size: 24rpx;
+  overflow: visible;
+  background: none;
+  line-height: 20rpx;
+}
+button::after{
+  background: none;
+  border: 0;
+}

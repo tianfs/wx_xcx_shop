@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/Index/Index",
+	
+	"pages/Address/List",
+	"pages/Address/Save",
+	
+	"pages/Cart/Index",
+	
+	"pages/Goods/List",
+	"pages/Goods/Details",
+
+	"pages/Order/List",
+	"pages/Order/Confirm",
+	"pages/Order/Details",
+	
+	"pages/Refund/Apply",
+	"pages/Refund/Details",
+	"pages/Refund/List",
+	"pages/Refund/Logistic",
+	
+	"pages/User/Index"
+	
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F16261",
+    "navigationBarTitleText": "基础商城",
+    "navigationBarTextStyle": "#fff"
+  },
+  "tabBar": {
+    "selectedColor": "#F16261",
+    "list": [
+      {
+        "pagePath": "pages/Index/Index",
+        "text": "首页",
+        "iconPath": "/images/nav_icon1.png",
+        "selectedIconPath": "/images/nav_icon1_active.png"
+      },
+      {
+        "pagePath": "pages/Cart/Index",
+        "text": "购物车",
+        "iconPath": "/images/nav_icon2.png",
+        "selectedIconPath": "/images/nav_icon2_active.png"
+      },
+      {
+        "pagePath": "pages/User/Index",
+        "text": "我的",
+        "iconPath": "/images/nav_icon3.png",
+        "selectedIconPath": "/images/nav_icon3_active.png"
+      }
+    ]
+  },
+  "debug": false
+}

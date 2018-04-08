@@ -1,0 +1,80 @@
+@import '/weui.wxss';
+.center-header{
+  background: #F16261;
+  text-align: center;
+  padding: 20px 0;
+}
+.center-tx{
+  width: 175rpx;
+  height: 175rpx;
+  border-radius: 100px;
+}
+.center-user-name{
+  display: block;
+  font-size: 28rpx;
+  color: #ffffff;
+}
+.weui-cell__bd{
+  font-size: 28rpx;
+  color: #898885;
+}
+.weui-cell__ft_in-access{
+  font-size: 28rpx;
+}
+.page__bd{
+  background: #ffffff;
+}
+.weui-grids{
+  border-top: 0;
+}
+.weui-grid{
+  width: 25%;
+}
+.weui-grid__label{
+  color: #3e3e3e;
+}
+.center-title{
+  margin-top: 25rpx;
+}
+.weui-cell::before{
+  left: 0;
+}
+.center-list-name{
+  color: #3e3e3e;
+}
+.button-contact{
+  width: 750rpx;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 28rpx;
+  background: none;
+  color: #3e3e3e;
+  line-height:50rpx;
+}
+button::after{
+  background: none;
+  border: 0;
+}
+.button-contact view{
+  display: inline-block;
+}
+.contact-right{
+  float: right;
+}
+.weui-cell__hd image{
+  margin-top: -3px;
+}
+.center-num{
+  position: absolute;
+  top: 30rpx;
+  right: 35rpx;
+  font-size: 22rpx;
+  background: #F16261;
+  color: #ffffff;
+  width: 35rpx;
+  height: 35rpx;
+  text-align: center;
+  line-height: 35rpx;
+  border-radius: 100px;
+}

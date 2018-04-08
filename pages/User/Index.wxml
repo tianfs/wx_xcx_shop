@@ -1,0 +1,60 @@
+<view class='center-header'>
+  <image class='center-tx' src="{{user_info.avatar_url}}"></image>
+  <text class='center-user-name'>{{user_info.nickname}}</text>
+</view>
+<view class="weui-cells weui-cells_after-title">
+  <navigator url="../Order/List" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__bd">我的订单</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">查看全部订单</view>
+  </navigator>
+</view>
+<view class="page__bd">
+  <view class="weui-grids">
+      <navigator url="../Order/List?order_state=1" class="weui-grid" hover-class="weui-grid_active">
+
+        <view class='center-num' wx:if="{{stateCount.no_pay_count >0}}">{{stateCount.no_pay_count}}</view>
+        <image class="weui-grid__icon" src="/images/center_icon1.png" />
+        <view class="weui-grid__label">待付款</view>
+      </navigator>
+      <navigator url="../Order/List?order_state=2,3" class="weui-grid" hover-class="weui-grid_active">
+        <view class='center-num' wx:if="{{stateCount.no_send_count >0}}">{{stateCount.no_send_count}}</view>
+        <image class="weui-grid__icon" src="/images/center_icon2.png" />
+        <view class="weui-grid__label">待发货</view>
+      </navigator>
+      <navigator url="../Order/List?order_state=4" class="weui-grid" hover-class="weui-grid_active">
+        <view class='center-num' wx:if="{{stateCount.no_get_count  >0}}">{{stateCount.no_get_count}}</view>
+        <image class="weui-grid__icon" src="/images/center_icon3.png" />
+        <view class="weui-grid__label">待收货</view>
+      </navigator>
+      <navigator url="../Refund/List" class="weui-grid" hover-class="weui-grid_active">
+        <view class='center-num' wx:if="{{stateCount.return_count  >0}}">{{stateCount.return_count}}</view>
+        <image class="weui-grid__icon" src="/images/center_icon4.png" />
+        <view class="weui-grid__label">退换货</view>
+      </navigator>
+  </view>
+</view>
+<view class="weui-cells weui-cells_after-title center-title">
+  <navigator url="../Cart/Index" class="weui-cell weui-cell_access" hover-class="weui-cell_active" open-type='switchTab'>
+    <view class="weui-cell__hd">
+      <image src="/images/center_icon5.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd center-list-name">我的购物车</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">查看购物车</view>
+  </navigator>
+  <view class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:if="{{is_customer==1}}">
+  <button open-type="contact" class='button-contact' >
+    <view class="weui-cell__hd">
+      <image src="/images/center_icon6.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd center-list-name">联系客服</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access contact-right">联系客服</view>
+  </button>
+  </view>
+  <navigator url="../Address/List" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="/images/center_icon7.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd center-list-name">收货地址管理</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access">管理地址</view>
+  </navigator>
+</view>

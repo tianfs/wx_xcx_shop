@@ -1,0 +1,59 @@
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="toList" />
+      <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+      <icon class="weui-icon-search" type="search" size="14"></icon>
+      <view class="weui-search-bar__text">搜索</view>
+    </label>
+  </view>
+  <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+</view>
+
+<view class="weui-tab">
+  <scroll-view class="scroll-view_H" scroll-x="false" style="width: 100%">
+    <view  class="weui-navbar__item">
+		<navigator url="../Goods/List">
+        <view class="weui-navbar__title">全部商品</view>
+		</navigator>
+    </view>
+    <block wx:for="{{tabs}}" wx:key="item">
+      <view  class="weui-navbar__item">
+       <navigator url="../Goods/List?cat_id={{item.cat_id}}">
+        <view class="weui-navbar__title">{{item.cat_name}}</view>
+        </navigator>
+      </view>
+      
+    </block>
+  </scroll-view>
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" class='swiper'>
+    <block wx:for="{{imgUrls}}" wx:key="item">
+      <swiper-item>
+        <block wx:if="{{item.url=='#' || !item.url}}">
+        <image src="{{item.image}}" class="slide-image" mode='widthFix' />
+        </block>
+        <block wx:else>
+        <navigator url="{{item.url}}"  open-type="{{item.target}}" hover-class="navigator-hover">
+            <image src="{{item.image}}" class="slide-image" mode='widthFix' />
+        </navigator>
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<import src="../Goods/Tpl.wxml"/>
+<view wx:for="{{programs}}" wx:key="k">
+    <view class='home-title'>
+        <text style='font-size:28px;'>—</text>
+        <text style='font-size:36px; margin-top:6rpx;'> · </text>
+        <text class='home-title-text'>{{item.program_name}}</text>
+        <text style='font-size:36px; margin-top:6rpx;'> · </text>
+        <text style='font-size:28px;'>—</text>
+    </view>
+    <template is="{{goodsTplName}}" data="{{goodsList: item.goods_data}}"/>
+</view>

@@ -1,0 +1,75 @@
+<view wx:if="{{list}}">
+<view class="weui-cells weui-cells_after-title">
+  <navigator wx:if="{{!address}}" url="../Address/List?is_callback=1" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view class="weui-cell__hd">
+      <image src="/images/order_icon1.jpg" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+    </view>
+    <view class="weui-cell__bd">添加收货地址</view>
+    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+  </navigator>
+
+<navigator wx:if="{{address}}" url="../Address/List?is_callback=1" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg order-add">
+      <image class="weui-media-box__thumb" src="/images/det_icon1.png" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+      <view class="weui-media-box__title">
+        <view class='det-user-name'>收件人：{{address.name}}</view>
+        <view class='det-phone-num'>{{address.tel}}</view>
+      </view>
+      <view class="weui-media-box__desc">收货地址：{{address.province}}{{address.city}}{{address.district}}{{address.address}}</view>
+    </view>
+  </navigator>
+</view>
+<view class='c-order-border'>
+  <image src='/images/order_border.jpg'></image>
+</view>
+<view class='c-bottom-wrp'>
+  <view class="weui-panel weui-panel_access">
+    <view class="weui-panel__hd">
+      <image class='c-order-shop-icon' src='/images/shop_icon.png'></image>
+      <text class='c-order-shop-text'>商品信息</text>
+    </view>
+    <view class="weui-panel__bd">
+
+      <block wx:for="{{list}}">
+        <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.goods_img}}" />
+          </view>
+          <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__desc">{{item.goods_name}}</view>
+            <view class="weui-media-box__desc con-order-gg">{{item.attr}}</view>
+          </view>
+          <view class='c-order-det'>
+            <view class='c-price1'>￥{{item.goods_price/100}}</view>
+            <view class='c-price2'>￥{{item.mark_price/100}}</view>
+            <view class='c-num'>x{{item.goods_num}}</view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+    <view class="weui-panel__ft">
+      <view class="weui-cell weui-cell_access weui-cell_link">
+        <view class="weui-cell__bd">运费：{{freight/100}}元</view>
+        <!-- <view class="weui-cell__ft weui-cell__ft_in-access"></view> -->
+      </view>
+      <view class="weui-cell weui-cell_access weui-cell_link">
+        <view class="weui-cell__bd">共
+          <text>{{total_goods_num}}</text>件商品 合计:
+          <text>￥{{total_amount/100}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='c-order-bottom'>
+    <input class='c-order-ipt' type='text' bindinput="input_leave_msg" value="{{leave_msg}}" placeholder='选填：买家留言（50字以内）'></input>
+  </view>
+</view>
+<view class='c-order-price-box'>
+  <view class='c-order-price'>总金额：<text>￥{{total_amount/100}}</text></view>
+  <view class='c-order-price-btn' bindtap="submit">
+    <text wx:if="{{list}}">立即支付</text>
+  </view>
+</view>
+</view>

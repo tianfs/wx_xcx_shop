@@ -1,0 +1,127 @@
+<view class='det-title'>
+  <view class='det-title-left'>
+    <text class='det-title-left-text1'>{{orderInfo.order_state_name}}</text>
+    <text>{{block}}</text>
+  </view>
+  <image class='det-title-img' src='/images/order_det_img1.png'></image>
+</view>
+<view class="weui-panel__bd">
+  <view  class="weui-media-box weui-media-box_appmsg" >
+    <view class="weui-media-box__hd weui-media-box__hd_in-appmsg order-add">
+      <image class="weui-media-box__thumb" src="/images/det_icon1.png" />
+    </view>
+    <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+      <view class="weui-media-box__title">
+        <view class='det-user-name'>收件人：{{orderInfo.name}}</view>
+        <view class='det-phone-num'>{{orderInfo.tel}}</view>
+      </view>
+      <view class="weui-media-box__desc">收货地址：{{orderInfo.address}}</view>
+    </view>
+  </view>
+</view>
+<view class='c-order-border'>
+  <image src='/images/order_border.jpg'></image>
+</view>
+<view class="weui-panel weui-panel_access">
+  <view class="weui-panel__hd">
+    <image class='c-order-shop-icon' src='/images/shop_icon.png'></image>
+    <text class='c-order-shop-text'>{{supplierInfo.supplier_name}}</text>
+  </view>
+ <block wx:for="{{orderGoods}}" >
+  <view class="order-goods-box">
+   
+    <navigator url="../Goods/Details?goods_id={{item.goods_id}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+    <image class="weui-media-box__thumb" src="{{item.main_img}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__desc">{{item.goods_name}}</view>
+        <view class="weui-media-box__desc con-order-gg">{{item.spec_name}}</view>
+      </view>
+      <view class='c-order-det'>
+        <view class='c-price2 c-details'>￥{{item.goods_price/100}}</view>
+        <view class='c-num'>x{{item.buy_number}}</view>
+      </view>
+    </navigator>
+    <view class='order_goods_bottom_box'>
+        <block wx:if="{{orderInfo.order_state >= 2 && orderInfo.order_state <=5}}">
+            <block wx:if="{{item.refund_id}}">
+                <view class='order_goods_bottom_btn'>
+                <navigator url="../Refund/Details?refund_id={{item.refund_id}}">查看进度</navigator>
+                </view>
+            </block>
+             <block wx:else>
+              <view class='order_goods_bottom_btn'><navigator url="../Refund/Apply?order_goods_id={{item.order_goods_id}}">申请售后</navigator></view>
+             </block>
+        </block>
+    </view>
+     
+  </view>
+ </block>
+  <view class='order-det-info'>
+    <view>
+      <text>商品小计</text>
+      <text class='order-det-info-price'>￥{{orderInfo.goods_total/100}}</text>
+    </view>
+    <view>
+      <text>运费</text>
+      <text class='order-det-info-price'>￥{{orderInfo.freight/100}}</text>
+    </view>
+    <view>
+      <text>满额立减</text>
+      <text class='order-det-info-price'>-￥{{orderInfo.coupon_total/100}}</text>
+    </view>
+    <view>
+      <text>实付费（含运费）</text>
+      <text class='order-det-info-price order-det-info-price-red'>￥{{orderInfo.order_total/100}}</text>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{orderInfo.leave_msg}}" class='order-det-info order-bh'>
+    <view>
+      <text>买家留言：</text><text class='order-det-info-price'>{{orderInfo.leave_msg}}</text>
+    </view>
+  </view>
+<view class='order-bh-wrp' style='padding-bottom:0'  wx:if="{{ orderInfo.order_state==4 || orderInfo.order_state==5}}">
+  <view class='order-det-info order-bh'>
+    <view>
+      <text>快递名称：</text>
+      <text class='order-det-info-price'>{{orderInfo.express_name}}</text>
+    </view>
+    <view>
+      <text>快递单号：</text>
+      <text class='order-det-info-price'>{{orderInfo.express_number}}</text>
+    </view>
+  </view>
+</view>
+<view class='order-bh-wrp'>
+  <view class='order-det-info order-bh'>
+    <view>
+      <text>订单编号：</text>
+      <text class='order-det-info-price'>{{orderInfo.order_number}}</text>
+    </view>
+    <view>
+      <text>创建时间：</text>
+      <text class='order-det-info-price'>{{orderInfo.create_time}}</text>
+    </view>
+    <view wx:if="{{orderInfo.order_state>=2 && orderInfo.order_state!=99}}">
+      <text>付款时间：</text> 
+      <text class='order-det-info-price'>{{orderInfo.pay_time}}</text>
+    </view>
+     <view wx:if="{{orderInfo.order_state>=4 && orderInfo.order_state!=99}}">
+      <text>发货时间：</text>
+      <text class='order-det-info-price'>{{orderInfo.delivery_time}}</text>
+    </view>
+    <view wx:if="{{orderInfo.order_state==5}}">
+      <text>成交时间：</text>
+      <text class='order-det-info-price'>{{orderInfo.delivery_time}}</text>
+    </view>
+  </view>
+</view>
+<view class='order-det-fixed'>
+    <view class='order-det-fixed-btn1' wx:if="{{orderInfo.order_state==1}}" bindtap='cancelOrder'>取消订单</view>
+    <view class='order-det-fixed-btn2' wx:if="{{orderInfo.order_state==1}}" bindtap='payOrder'>支付订单</view>
+    <view class='order-det-fixed-btn2' wx:if="{{orderInfo.order_state==4}}" bindtap='confirmGoods'>确认收货</view>
+    <view class='order-det-fixed-btn1' wx:if="{{orderInfo.order_state==99 || orderInfo.order_state==5 }}"  bindtap='delOrder'>删除订单</view>
+</view>

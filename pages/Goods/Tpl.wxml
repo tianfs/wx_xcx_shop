@@ -1,0 +1,37 @@
+<template name="goods_show_2">
+<view class="container">
+    <view class="gray_bg">
+        <view wx:for="{{goodsList}}">
+        <navigator url="../Goods/Details?goods_id={{item.goods_id}}">
+            <view class="multi_img">
+                <image src="{{item.main_img.img_url}}" class="width180"></image>
+                <view class="title_name">{{item.goods_name}}</view>
+                <view class="money_text pink_col">￥<text>{{item.goods_price/100}}</text></view>
+            </view>
+        </navigator>
+        </view>
+    </view>
+</view>
+</template>
+<template name="goods_show_1">
+<view class="container">
+    <view class="drawing"  wx:for="{{goodsList}}">
+        <navigator url="../Goods/Details?goods_id={{item.goods_id}}">
+        <view class="dra_box">
+            <view class="dt_img">
+                <image src="{{item.main_img.img_url}}" class="width120"></image>
+            </view>
+            <view class="dd_text">
+                <view class="name_title">{{item.goods_name}}</view>
+                <view class="name_describe">{{item.second_name}}</view>
+                <text class='name_member pink_col'>价格￥<text>{{item.goods_price/100}}</text>
+                
+                <text class="name_certificate gray_col" wx:if="{{item.mark_price && item.mark_price > 0}}"> 原价￥{{item.mark_price/100}}</text></text>
+            </view>
+        </view>
+        </navigator>
+    </view>
+</view>
+</template>
+
+

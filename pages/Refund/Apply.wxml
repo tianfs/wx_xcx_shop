@@ -1,0 +1,130 @@
+<view class='order-det-info refund-top-border-null'> 
+  <view>
+    <text>商品名称</text>
+    <text class='order-det-info-price'>{{goods.goods_name}}{{goods.spec_name}}</text>
+  </view>
+  <view>
+    <text>退款数量</text>
+        <view class="stepper">  
+                            <text data-index="{{index}}" class="{{minusStatus}}" bindtap="bindMinus" >-</text>  
+                            <input type="number" bindchange="bindManual" value="{{refund_number}}" />  
+                            <text data-index="{{index}}" class="normal" bindtap="bindPlus">+</text>
+         </view>
+</view>
+  <view>
+    <text>商品金额</text>
+    <text class='order-det-info-price order-det-info-price-red'>￥{{actual_money/100}}</text>
+  </view>
+  <view>
+    <text>订单编号</text>
+    <text class='order-det-info-price'>{{goods.order_number}}</text>
+  </view>
+  <view>
+    <text>交易时间</text>
+    <text class='order-det-info-price'>{{goods.pay_time}}</text>
+  </view>
+</view>
+<view class='refund-list-wrp'>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">处理方式</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="typeChange" range="{{types}}" value="{{type_index}}">
+          <view class="weui-select weui-select_in-select-after">{{types[type_index]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">货物状态</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="stateChange" range="{{states}}" value="{{state_index}}">
+          <view class="weui-select weui-select_in-select-after">{{states[state_index]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">退款原因</view>
+      </view>
+      <view class="weui-cell__bd">
+        <picker bindchange="explainChange" range="{{explains}}" value="{{explain_index}}">
+          <view class="weui-select weui-select_in-select-after">{{explains[explain_index]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">退款金额</view>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="weui-select weui-select_in-select-after select-arrow-null">{{actual_money/100}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after">
+        <view class="weui-label">手机号码</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input bindinput="input_refund_tel" class='refund-bz-ipt' type='text' placeholder='手机号码'></input>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after select-arrow-null">
+        <view  class="weui-label">备注信息</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input class='refund-bz-ipt' bindinput="input_remark" type='text' placeholder='最多可填写200个字'></input>
+      </view>
+    </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_select">
+      <view class="weui-cell__hd weui-cell__hd_in-select-after select-arrow-null upload-text">
+        <view class="weui-label">图片举证</view>
+      </view>
+      <view class="weui-cell__bd upload-padding">
+        <view class="weui-cells">
+          <view class="weui-cell refund-cell">
+            <view class="weui-cell__bd">
+              <view class="weui-uploader">
+                <view class="weui-uploader__hd">
+                  <view class="weui-uploader__title">可上传5张图片</view>
+                  <view class="weui-uploader__info">{{explain_img.length}}/5</view>
+                </view>
+                <view class="weui-uploader__bd">
+                  <view class="weui-uploader__files" id="uploaderFiles">
+                    <block wx:for="{{explain_img}}" wx:key="*this">
+                      <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                        <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                      </view>
+                    </block>
+                  </view>
+                  <view wx:if="{{explain_img.length<5}}" class="weui-uploader__input-box">
+                    <view class="weui-uploader__input" bindtap="chooseImage"></view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='refund-btn'>
+  <button class="weui-btn" type="primary" bindtap="submit">提交</button>
+</view>

@@ -1,0 +1,47 @@
+<view class="shopping">
+    <view wx:if="{{carts.length>0}}">
+    <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{carts}}" wx:for-item="item" wx:key="">
+
+    <view class="shopp_cont">
+            <span class="chebox">
+                <image wx:if="{{item.choose == 1}}" data-index="{{index}}" bindtap="choose" src='../../images/shopping_che.png' class="width30"></image>
+                <image wx:else src='../../images/che.png' data-index="{{index}}" bindtap="choose" class="width30"></image>
+            </span>
+
+            <view class='dt_img_box'><image src='{{item.goods_img}}' class='width160'></image></view>
+            <view class="dd_text_box">
+                <view class="shop_text">
+                    <view class='left_text'>
+                        {{item.goods_name}}
+                        <view class="weui-media-box__desc con-order-gg">{{item.attr}}</view>
+                    </view>
+                    
+                    <view class='right_text'>
+                        <view class='original_text'>￥{{item.goods_price/100}}</view>
+                        <view class="current_text">￥{{item.mark_price/100}}</view>
+                    </view>
+                </view>
+                <view class="stepper">  
+                    <text data-index="{{index}}" class="{{minusStatus}}" bindtap="bindMinus" >-</text>  
+                    <input type="number" bindchange="bindManual" value="{{item.goods_num}}" />  
+                    <text data-index="{{index}}" class="normal" bindtap="bindPlus">+</text>
+                </view>
+            </view>
+        </view>
+        <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+
+    </view>
+    <view class='settle_accounts'>
+            <view wx:if="{{choose_all == 1}}"class='sett_left' bindtap="chooseAll"><image src='../../images/shopping_che.png' class='width30'></image><text>全选</text></view>
+            <view wx:else class='sett_left' bindtap="chooseAll"><image src='../../images/che.png' class='width30'></image><text>全选</text></view>
+            <view class='sett_center'>
+                <view class='hej_text margintop10'>合计<text>￥{{goods_amount/100}}</text></view>
+                <view class='hej_text'>不含运费</view>
+            </view>
+            <view class='sett_right'  bindtap="balance">结算<text>（{{count}}）</text></view>
+        </view>
+    </view>
+    <view wx:else style='text-align:center; margin-top:200rpx;'>
+        <image src='../../images/empty.png' mode='widthFix' style='width:400rpx;'></image>
+    </view>
+</view>

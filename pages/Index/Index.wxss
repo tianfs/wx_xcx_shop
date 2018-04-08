@@ -1,0 +1,55 @@
+/* pages/home/home.wxss */
+@import '/weui.wxss';
+.weui-search-bar__form{
+  border-radius: 25px;
+}
+.weui-search-bar__label{
+  border-radius: 25px;
+}
+.weui-search-bar__cancel-btn{
+	color:#999;
+}
+.weui-tab__panel{
+  padding-top: 0;
+}
+.weui-navbar__item.weui-bar__item_on{
+  color:#F16261;
+  border-bottom: 2px solid #F16261;
+}
+.weui-navbar__title{
+  font-size: 28rpx;
+}
+.weui-navbar__item {
+  box-sizing: border-box;
+  padding: 10px 0;
+  margin: 0 10px;
+  flex: none;
+  width: auto;
+  display: inline-block;
+}
+.swiper{
+  height: 350rpx;
+}
+.slide-image{  
+    width: 750rpx;
+}
+.scroll-view_H{
+    white-space: nowrap;
+}
+.home-title{
+  text-align: center;
+  background: #ffffff;
+  line-height: 60rpx;
+  padding: 10rpx;
+  margin-top: 15rpx;
+}
+.home-title text{
+  vertical-align: middle;
+  line-height: 60rpx;
+  display: inline-block;
+  padding: 0 10rpx;
+}
+.home-title-text{
+  font-size: 32rpx;
+  margin-top: 6rpx;
+}

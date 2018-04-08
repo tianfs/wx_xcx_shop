@@ -1,0 +1,25 @@
+<block wx:if="{{addrs.length>0}}">
+<view class="container">
+    <view wx:for="{{addrs}}" class="addr-box">
+        <view class="chebox" wx:if="{{item.addr_id==default_id}}">
+            <image src='../../images/shopping_che.png' class="width40"></image>
+        </view>
+        <view class="chebox" wx:else bindtap="setDefault" data-addr_id="{{item.addr_id}}">
+            <image src='../../images/che.png' class="width40"></image>
+        </view>
+        <view class='addr-info' bindtap="closeBack"  data-addr_id="{{item.addr_id}}">
+            <span>{{item.name}}  {{item.tel}}</span>
+            <span>{{item.address}}</span>
+        </view>
+        <view class="chebox right" bindtap="openSave"  data-addr_id="{{item.addr_id}}">
+            <image src='../../images/edit_bi.png' class="width50"></image>
+        </view>
+    </view>
+</view>
+</block>
+<block wx:else>
+<view class='no_data'>请您添加地址信息!~</view>
+</block>
+<view class='c-order-price-box' bindtap="openSave">
+    <text>新增地址</text>
+</view>

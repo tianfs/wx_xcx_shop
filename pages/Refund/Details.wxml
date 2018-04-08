@@ -1,0 +1,70 @@
+
+<view class='r-det-tk'>
+  <icon type="warn" size="23" color="#F43530" wx:if="{{info.refund_state == 5}}"></icon>
+  <icon type="success" size="23"  wx:else></icon>
+  <text>{{info.refund_state_name}}</text>
+</view>
+<view class='refund-address-box' wx:if="{{info.refund_state==2}}">
+    <view class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+            <view class="weui-media-box__desc">
+            <text class="weui-media-addr_desc">收货地址：</text>
+            <text class="weui-media-addr">{{info.refund_address}}</text>
+            </view>
+        </view>
+   </view>
+</view>
+<view class='r-det-ly' wx:if="{{info.refund_state==5}}">
+  <view class='r-det-ly-a'>拒绝理由：{{info.not_refund_reason}}</view>
+</view>
+<view class='order-det-info r-det-xx'>
+  <view>
+    <text>退款编号</text>
+    <text class='order-det-info-price'>{{info.refund_no}}</text>
+  </view>
+  <view>
+    <text>申请时间</text>
+    <text class='order-det-info-price'>{{info.create_time}}</text>
+  </view>
+  <view>
+    <text>退款原因</text>
+    <text class='order-det-info-price'>{{info.explain_msg}}</text>
+  </view>
+  <view>
+    <text>处理方式</text>
+    <text class='order-det-info-price'>{{info.refund_type_name}}</text>
+  </view>
+  <view>
+    <text>货物状态</text>
+    <text class='order-det-info-price'>{{info.goods_state_name}}</text>
+  </view>
+
+   <view wx:if="{{info.refund_state==3}}">
+    <text>退货物流方式</text>
+    <text class='order-det-info-price'>{{info.logistic_name}}</text>
+  </view>
+   <view wx:if="{{info.refund_state==3}}">
+    <text>退货物流单号</text>
+    <text class='order-det-info-price'>{{info.logistic_number}}</text>
+  </view>
+
+  <view>
+    <text>用户备注</text>
+    <text class='order-det-info-price'>{{info.remark}}</text>
+  </view>
+  <view>
+    <text>退款金额</text>
+    <text class='order-det-info-price order-det-info-price-red'>￥{{info.actual_money/100}}</text>
+  </view>
+</view>
+<view class='refund-btn'>
+  <block wx:if="{{info.refund_state==2}}">
+    <button class="weui-btn" type="primary" bindtap="refundLogistic">填写退货物流信息</button>
+  </block>
+  <block wx:if="{{info.refund_state==1 || info.refund_state==2}}">
+    <button class="weui-btn weui-white" type="primary" bindtap="cancelRefund">撤销申请</button>
+  </block>
+  <block wx:if="{{info.refund_state==6 || info.refund_state==5}}">
+    <button class="weui-btn weui-white" type="primary" bindtap="applyRefund">再次申请</button>
+  </block>
+</view>

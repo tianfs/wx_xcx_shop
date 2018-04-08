@@ -1,0 +1,113 @@
+.swiper-tab{  
+    width:100%;
+    height:80rpx;
+    display:flex;
+
+    background: #ffffff;
+}  
+.swiper-tab-list{  
+    line-height:80rpx;
+    text-align:center;
+    flex:1;
+    color:#808080;
+    font-size:28rpx;
+}  
+.on{ 
+    color: #F16261;  
+    border-bottom: 5rpx solid #F16261;
+}  
+.swiper-box{ 
+    display: block; 
+    height: 100%; 
+    width: 100%; 
+    overflow: hidden;
+}  
+ 
+.main_box{
+    width: 100%;
+    background: #ffffff;
+    margin: 10rpx 0;
+    border-top: 2rpx solid #ededed;
+    border-bottom: 2rpx solid #ededed;
+}
+.order_title{
+    padding: 20rpx;
+    overflow: hidden;
+    border-bottom: 2rpx solid #ededed;
+}
+.dingdh_text{
+    color: #9f9f9f;
+    font-size: 26rpx;
+    float: left;
+}
+.order_title text{
+    float: right;
+    font-size: 26rpx;
+}
+.gray_col{
+    color: #9f9f9f;
+}
+.order_cont{
+    padding: 20rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.order_left{
+    width: 154rpx;
+    height: 154rpx;
+    border: 2rpx solid #ededed;
+    float: left;
+}
+.width154{
+    width: 154rpx;
+    height: 154rpx;
+}
+.order_center{
+    width: 330rpx;
+    float: left;
+}
+.margintop20{
+    margin-top: 20rpx;
+}
+.marginbottom20{
+    margin-bottom: 20rpx;
+}
+.payment_text{
+    width: 100%;
+    color: #969696;
+    font-size: 26rpx;
+    text-align: right;
+    display: inline-block;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+.button_box{
+    padding:0 20rpx 20rpx 20rpx;
+    overflow: hidden;
+    text-align: right;
+}
+.pay_btn,.order_btn,.detailed_btn{
+    padding:6rpx 20rpx;
+    border: 2rpx solid #F16261;
+    font-size: 30rpx;
+    border-radius: 4rpx;
+    color: #F16261;
+    cursor: pointer;
+    margin-left: 20rpx;
+    text-align: right;
+    display: inline-block;
+}
+.num_text{
+    font-size: 26rpx;
+    color: #969696;
+    margin-left: 10rpx;
+}
+.margintop10{
+    margin-top: 10rpx;
+}
+.margintopbottom10{
+    margin: 10rpx 0;
+}
+.url_text{
+  display: inline-block;
+}

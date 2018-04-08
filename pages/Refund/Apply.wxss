@@ -1,0 +1,155 @@
+@import '/weui.wxss';
+.order-det-info view{
+  font-size: 28rpx; 
+  color: #545454;
+  padding: 5px 0;
+}
+.order-det-info{
+  padding: 10px 15px;
+  border-top: 1rpx solid #e5e5e5;
+  background: #ffffff;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.order-det-info-price{
+  float: right;
+  font-size: 24rpx;
+}
+.order-det-info-price-red{
+  color:#F16261;
+}
+.order-bh-wrp{
+  padding-bottom: 130rpx;
+}
+.order-bh{
+  margin-top: 10px;
+  background: #ffffff;
+  border-bottom: 1rpx solid #e5e5e5;
+  color: #898989;
+}
+.order-bh view{
+  color: #898989;
+}
+.order-bh .order-det-info-price{
+  float: none;
+  font-size: 28rpx;
+}
+.refund-top-border-null{
+  border-top: 0;
+}
+.weui-label{
+  font-size: 28rpx;
+  color: #545454;
+}
+.weui-select_in-select-after{
+  font-size: 28rpx;
+  color: #545454;
+}
+.refund-list-wrp{
+  margin-top: 20rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+.weui-cells::before{
+  border:0;
+}
+.weui-cell{
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.weui-cell::before{
+  border-top: 0;
+}
+.weui-cells::after{
+  border: 0;
+}
+.weui-select_in-select-after{
+  border-right: 0;
+}
+.weui-cells{
+  font-size: 28rpx;
+}
+.refund-bz-ipt{
+  width: 470rpx;
+  height: 2.58823529em;
+  font-size: 28rpx;
+  color:#545454;
+}
+.select-arrow-null::before{
+  content: none
+}
+.refund-cell{
+  padding: 0; 
+  border-bottom: 0;
+}
+.weui-uploader__img{
+  width: 150rpx;
+  height: 150rpx;
+}
+.weui-uploader__input-box{
+  width: 150rpx;
+  height: 150rpx;
+  box-sizing: border-box;
+}
+.upload-text{
+  margin-top: -39rpx;
+}
+.weui-uploader__title{
+  font-size: 22rpx;
+  color: #b6b6b6;
+}
+.weui-uploader__info{
+  margin-right: 25rpx;
+  font-size: 22rpx;
+}
+.upload-padding{
+  padding-bottom: 20rpx;
+}
+.refund-btn{
+  margin-top: 20rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.refund-btn .weui-btn{
+  font-size: 28rpx;
+  background-color: #F16261;
+}
+.stepper {  
+    width: 200rpx;  
+    border: 1px solid #ccc;  
+    border-radius: 6rpx;  
+    float: right;
+    height: 20px;
+    line-height: 20px;
+}  
+  
+.stepper text {  
+    width: 58rpx;  
+    text-align: center;  
+    float: left;  
+    font-size: 40rpx;
+    color: #949494;
+}  
+.order-det-info wx-view{
+    padding: 0;
+}
+  
+.stepper input {  
+    width: 80rpx;  
+    float: left;  
+    margin: 0 auto;  
+    text-align: center;  
+    font-size: 30rpx;  
+    border-left: 1px solid #ccc;  
+    border-right: 1px solid #ccc;  
+    padding:0; 
+    color: #949494;
+    height: 20px;
+    min-height: 20px;
+    line-height: 20px;
+    display: inline-block;
+}  
+.stepper .normal{  
+    color: #949494;
+}  
+  
+.stepper .disabled{  
+    color: #ccc;  
+} 

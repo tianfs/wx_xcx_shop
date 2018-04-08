@@ -1,0 +1,132 @@
+@import '/weui.wxss';
+
+.r-det-tk {
+    text-align: center;
+    padding: 20rpx 0;
+}
+
+.r-det-tk text {
+    font-size: 30rpx;
+}
+
+.r-det-tk icon {
+    margin-right: 10rpx;
+}
+
+.r-det-ly {
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.r-det-ly-a {
+    font-size: 28rpx;
+    padding: 20rpx;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.r-det-ly-b {
+    font-size: 28rpx;
+    padding: 20rpx;
+    color: #909090;
+    line-height: 39rpx;
+}
+
+.r-det-ly-b text {
+    color: #f16261;
+}
+
+.order-det-info view {
+    font-size: 28rpx;
+    color: #545454;
+    padding: 5px 0;
+}
+
+.order-det-info {
+    padding: 10px 15px;
+    border-top: 1rpx solid #e5e5e5;
+    background: #fff;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+
+.order-det-info-price {
+    float: right;
+    font-size: 24rpx;
+}
+
+.order-det-info-price-red {
+    color: #f16261;
+}
+
+.r-det-xx {
+    margin-top: 20rpx;
+}
+
+.r-det-xs {
+    background: #fff;
+    font-size: 28rpx;
+    padding: 20rpx;
+    text-align: center;
+    border-bottom: 1rpx solid #e5e5e5;
+    color: #4678bd;
+}
+
+.refund-btn {
+    margin-top: 20rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.refund-btn .weui-btn {
+    font-size: 28rpx;
+    background-color: #f16261;
+}
+
+.refund-btn .weui-white {
+    background-color: #fff;
+    color: #2e2e2e;
+}
+
+.weui-media-box__hd_in-appmsg {
+    width: 60rpx;
+    height: 110rpx;
+    margin-right: 10rpx;
+}
+
+.weui-media-box__desc {
+    font-size: 28rpx;
+}
+
+.weui-media-box__hd_in-appmsg {
+    width: 110rpx;
+}
+
+.weui-media-box__desc {
+    margin-top: 0;
+}
+
+.order-add {
+    width: 60rpx;
+}
+.weui-media-box__desc{
+    display: block;
+}
+.refund-address-box {
+    background: #fff;
+    border-bottom: 1rpx solid #e5e5e5;
+    border-top: 1rpx solid #e5e5e5;
+}
+
+.weui-media-addr_desc {
+    float:left;
+
+}
+
+.weui-media-addr {
+    display:inline-block;
+    width:550rpx;
+    float: left;
+}
+.weui-media-box_appmsg{
+    margin-bottom: -20rpx;
+}

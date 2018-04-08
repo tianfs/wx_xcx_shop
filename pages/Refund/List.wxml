@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<view wx:if="{{refundList.length>0}}">
+<view class='main_box' wx:for="{{refundList}}" >
+    <view class="order_title">
+        <span class="dingdh_text">退款单号：{{item.refund_no}}</span>
+        <text class='gray_col'>{{item.refund_type_name}}，{{item.refund_state_name}}</text>
+      </view>
+      <view class="drawing" >
+          <view class="dra_box">
+              <view class="dt_img">
+                <image src="{{item.main_img}}" class="width120"></image>
+              </view>
+              <view class="dd_text">
+                  <view class="name_title">{{item.goods_name}}</view>
+                  <view class="name_describe">{{item.spec_name}}</view>
+                  <view class="name_member margintop20">
+                    <span class="pink_col">￥{{item.goods_price/100}}</span>
+                    <span class="num_text">*{{item.buy_number}} </span>
+                  </view>
+              </view>
+          </view>
+    </view>
+    <view class='payment_text margintopbottom10'>退款金额：
+          <text class='pink_col'>￥{{item.actual_money/100}}</text>
+    </view>
+  <view class='button_box' >
+      <view class="pay_btn" ><navigator url="../Refund/Details?refund_id={{item.refund_id}}">查看详情</navigator></view>
+  </view>
+   
+</view>
+</view>
+<view wx:else class='no_data'>亲~您还没有相关订单</view>

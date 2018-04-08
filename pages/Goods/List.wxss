@@ -1,0 +1,38 @@
+@import '/weui.wxss';
+.weui-search-bar__cancel-btn{
+	color:#999;
+}
+.weui-navbar__item.weui-bar__item_on{
+  color:#F16261;
+  border-bottom: 2px solid #F16261;
+}
+.weui-navbar__title{
+  font-size: 28rpx;
+}
+.weui-navbar__item {
+  box-sizing: border-box;
+  padding: 10px 0;
+  margin: 0 10px;
+  flex: none;
+  width: auto;
+  display: inline-block;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.weui-change-icon{
+  width: 25px;
+  height: 25px;
+  margin-top:1.5px; 
+}
+.weui-change-icon image{
+  width: 25px;
+  height: 25px;
+  
+}
+.weui-search-bar__form{
+  border-radius: 25px;
+}
+.weui-search-bar__label{
+  border-radius: 25px;
+}

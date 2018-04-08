@@ -1,0 +1,29 @@
+.section text{
+    float: left; 
+    width: 150rpx;
+   
+}
+.section text,input,picker{
+    font-size: 28rpx;
+    height:52.5rpx;
+    line-height:52.5rpx;
+    text-overflow:clip;
+    overflow:hidden;
+}
+
+.section{
+    padding: 22rpx 20rpx;
+    border-bottom: 1rpx solid #dadada;
+}
+.footer-btn-box{
+    margin-top: 100rpx;
+    text-align: center;
+}
+.footer-btn {
+width: 35%;
+height: 70rpx;
+line-height: 70rpx;
+font-size: 32rpx;
+display: inline-block;
+margin: 0 5%;
+}

@@ -1,0 +1,40 @@
+<view class="weui-search-bar">
+  <view class="weui-search-bar__form">
+    <view class="weui-search-bar__box">
+      <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+      <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="getList" />
+      <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+        <icon type="clear" size="14"></icon>
+      </view>
+    </view>
+    <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+      <icon class="weui-icon-search" type="search" size="14"></icon>
+      <view class="weui-search-bar__text">搜索</view>
+    </label>
+    
+  </view>
+  <view bindtap="changIcon" class='weui-search-bar__cancel-btn weui-change-icon' hidden="{{inputShowed}}">
+      <image src='../../images/{{listTypeIconName}}'></image>
+  </view>
+  <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+</view>
+<view class="weui-tab">
+  <scroll-view class="scroll-view_H" scroll-x="false" style="width: 100%">
+     <view data-cat_id="" class="weui-navbar__item {{cat_id == '' ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">全部商品</view>
+      </view>
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view data-cat_id="{{item.cat_id}}" class="weui-navbar__item {{cat_id == item.cat_id ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">{{item.cat_name}}</view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<block wx:if="{{goodsList.length>0}}">
+<import src="Tpl.wxml"/>
+<template is="{{goodsTplName}}" data="{{goodsList: goodsList}}"/>
+</block>
+<block wx:else>
+<view class='no_data'>亲~没有相关商品</view>
+</block>
+

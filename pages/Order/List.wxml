@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{order_state=='' ? 'on' : ''}}"  data-order_state="" bindtap="swichNav">全部</view>
+    <view class="swiper-tab-list {{order_state=='1' ? 'on' : ''}}"  data-order_state="1" bindtap="swichNav">待付款</view>
+    <view class="swiper-tab-list {{order_state=='2,3' ? 'on' : ''}}"  data-order_state="2,3" bindtap="swichNav">待发货</view>
+    <view class="swiper-tab-list {{order_state=='4' ? 'on' : ''}}"  data-order_state="4" bindtap="swichNav">待收货</view>
+    <view class="swiper-tab-list {{order_state=='5' ? 'on' : ''}}"  data-order_state="5" bindtap="swichNav">已完成</view>
+</view>
+
+<view wx:if="{{orderList.length>0}}">
+<view class='main_box' wx:for="{{orderList}}" >
+  <navigator url="../Order/Details?order_id={{item.order_id}}">
+    <view class="order_title">
+        <span class="dingdh_text">订单号：{{item.order_number}}</span>
+        <text class='gray_col'>{{item.order_state_name}}</text>
+      </view>
+      <view class="drawing" wx:for="{{item.orderGoods}}" wx:for-item="sub_item">
+          <view class="dra_box">
+              <view class="dt_img">
+                <image src="{{sub_item.main_img}}" class="width120"></image>
+              </view>
+              <view class="dd_text">
+                  <view class="name_title">{{sub_item.goods_name}}</view>
+                  <view class="name_describe">{{sub_item.spec_name}}</view>
+                  <view class="name_member margintop20">
+                    <span class="pink_col">￥{{sub_item.goods_price/100}}</span>
+                    <span class="num_text">*{{sub_item.buy_number}} </span>
+                  </view>
+              </view>
+          </view>
+    </view>
+    <view class="drawing" wx:for="{{item.order_goods}}" wx:for-item="sub_item">
+          <view class="dra_box">
+              <view class="dt_img">
+                <image src="{{sub_item.main_img}}" class="width120"></image>
+              </view>
+              <view class="dd_text">
+                  <view class="name_title">{{sub_item.goods_name}}</view>
+                  <view class="name_describe">{{sub_item.spec_name}}</view>
+                  <view class="name_member margintop20">
+                    <span class="pink_col">￥{{sub_item.goods_price/100}}</span>
+                    <span class="num_text">*{{sub_item.buy_number}} </span>
+                  </view>
+              </view>
+          </view>
+    </view>
+  </navigator>  
+    <view class='payment_text margintopbottom10'>实际付款：
+          <text class='pink_col'>￥{{item.order_total/100}}</text>
+    </view>
+  <view class='button_box' >
+      <view class="pay_btn" data-order_id="{{item.order_id}}" bindtap='payOrder' wx:if="{{item.order_state==1}}">去付款</view>
+      <view class="order_btn" data-order_id="{{item.order_id}}" bindtap='cancelOrder' wx:if="{{item.order_state==1}}">取消订单</view>
+      <view class="detailed_btn" data-order_id="{{item.order_id}}" bindtap='confirmGoods' wx:if="{{item.order_state==4}}">确认收货</view>
+      <view class="order_btn" data-order_id="{{item.order_id}}" bindtap='delOrder' wx:if="{{item.order_state==99 || item.order_state==5 }}">删除订单</view>
+  </view>
+   
+</view>
+</view>
+<view wx:else class='no_data'>亲~您还没有相关订单</view>
