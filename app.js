@@ -1,5 +1,6 @@
 //app.js test
 App({
+
     globalData:{
         openAuthCache:true,
         scene: null,
